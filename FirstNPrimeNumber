@@ -1,0 +1,32 @@
+import java.util.*;
+
+
+class FirstnPrimeNo {
+
+    public static void prime(int n) {
+        int total = 2;
+        int i = 3;
+        int c;
+        while (n > 1) {
+            for (c = 2; c <= i; c++) {
+                if (i % c == 0) {
+                    break;
+                }
+            }
+            if (c == i) {
+                System.out.println(i);
+                total = total + i;
+                n--;
+            }
+            i++;
+        }
+        System.out.println("total is " + total);
+    }
+
+    public static void main(String arg[]) {
+        Scanner sobj = new Scanner(System.in);
+        System.out.println("Enter how many prime number you want add : ");
+        int no = sobj.nextInt();
+        prime(no);
+    }
+}
